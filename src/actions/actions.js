@@ -5,7 +5,7 @@ import {
     RECEIVE_USERDATA_ERROR,
     REQUEST_REPOS,
     RECEIVE_REPOS,
-    RECEIVE_REPOS_ERROR,
+    RECEIVE_REPOS_ERROR
 } from '../constants/ActionTypes';
 
 export function selectUser (user) {
@@ -17,41 +17,41 @@ export function selectUser (user) {
 
 export function requestUserData () {
     return {
-        type: REQUEST_USERDATA,
+        type: REQUEST_USERDATA
     };
 }
 
 function receiveUserData (json) {
     return {
         type: RECEIVE_USERDATA,
-        userData: json,
+        userData: json
     };
 }
 
 function receiveUserDataErr (error) {
     return {
         type: RECEIVE_USERDATA_ERROR,
-        error,
+        error
     };
 }
 
 function requestRepos () {
     return {
-        type: REQUEST_REPOS,
+        type: REQUEST_REPOS
     };
 }
 
 function receiveRepos (json) {
     return {
         type: RECEIVE_REPOS,
-        repos: json,
+        repos: json
     };
 }
 
 function receiveReposErr (error) {
     return {
         type: RECEIVE_REPOS_ERROR,
-        error,
+        error
     };
 }
 

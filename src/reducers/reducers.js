@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+
 import {
     SELECT_USER,
     REQUEST_USERDATA,
@@ -6,7 +7,7 @@ import {
     RECEIVE_USERDATA_ERROR,
     REQUEST_REPOS,
     RECEIVE_REPOS,
-    RECEIVE_REPOS_ERROR,
+    RECEIVE_REPOS_ERROR
 } from '../constants/ActionTypes';
 
 export function currentUser (state = '', action) {
@@ -28,17 +29,17 @@ export function currentUserData (
     switch (action.type) {
         case REQUEST_USERDATA:
             return Object.assign({}, state, {
-                isFetching: true,
+                isFetching: true
             });
         case RECEIVE_USERDATA:
             return Object.assign({}, state, {
                 isFetching: false,
-                userData: action.userData,
+                userData: action.userData
             });
         case RECEIVE_USERDATA_ERROR:
             return Object.assign({}, state, {
                 isFetching: false,
-                userData: action.error,
+                userData: action.error
             });
         default:
             return state;
@@ -55,17 +56,17 @@ export function userRepos (
     switch (action.type) {
         case REQUEST_REPOS:
             return Object.assign({}, state, {
-                isFetching: true,
+                isFetching: true
             });
         case RECEIVE_REPOS:
             return Object.assign({}, state, {
                 isFetching: false,
-                repos: action.repos,
+                repos: action.repos
             });
         case RECEIVE_REPOS_ERROR:
             return Object.assign({}, state, {
                 isFetching: false,
-                repos: action.error,
+                repos: action.error
             });
         default:
             return state;
@@ -75,7 +76,7 @@ export function userRepos (
 const rootReducer = combineReducers({
     currentUser,
     currentUserData,
-    userRepos,
+    userRepos
 });
 
 export default rootReducer;
